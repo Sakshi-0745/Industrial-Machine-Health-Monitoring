@@ -1,0 +1,223 @@
+/* General Body - More inviting background */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Modern font */
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    /* Soft, light blue/teal gradient */
+    margin: 0;
+    padding: 25px;
+    /* Slightly more padding */
+    display: flex;
+    /* For centering */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container - Elevated look */
+.container {
+    max-width: 900px;
+    width: 95%;
+    margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    /* Increased padding */
+    border-radius: 25px;
+    /* Softer, larger border-radius */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 0 4px #00bcd433;
+    /* Deeper shadow with a teal glow */
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    /* Subtle lift on hover */
+}
+
+/* Header - Bold and modern */
+h1 {
+    text-align: center;
+    color: #00bcd4;
+    /* Vibrant teal */
+    margin-bottom: 30px;
+    font-size: 3em;
+    /* Larger size */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons - Dynamic and inviting */
+button {
+    background: linear-gradient(45deg, #2979ff, #00b0ff);
+    /* Blue gradient */
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    /* More substantial padding */
+    border-radius: 30px;
+    /* Pill-shaped */
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(41, 121, 255, 0.4);
+    outline: none;
+    margin: 5px;
+    /* Added for multiple buttons */
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00b0ff, #2979ff);
+    /* Gradient shift */
+    box-shadow: 0 8px 20px rgba(41, 121, 255, 0.6);
+    transform: scale(1.05);
+    /* Slight enlargement */
+}
+
+/* Log area - Clean, high-contrast display */
+.log {
+    margin-top: 30px;
+    max-height: 450px;
+    overflow-y: auto;
+    border: 2px solid #00bcd4;
+    /* Vibrant border */
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fcfcfc;
+    /* Very light background for better contrast */
+    font-family: 'Fira Code', monospace;
+    /* A more stylish monospace font */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar styling for a consistent look (Webkit browsers) */
+.log::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log::-webkit-scrollbar-thumb {
+    background-color: #00bcd4;
+    border-radius: 10px;
+}
+
+.log::-webkit-scrollbar-track {
+    background: #e0f7fa;
+}
+
+/* Each log entry - Distinct rows */
+.log div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    line-height: 1.4;
+    border-left: 5px solid transparent;
+    /* Prepare for status bar */
+}
+
+/* Normal entries - Subtle and legible */
+.log div.normal {
+    background-color: #e3f2fd;
+    /* Light blue background */
+    color: #263238;
+    /* Dark text */
+    border-left-color: #4fc3f7;
+    /* Light blue status bar */
+}
+
+/* Anomaly entries - High-impact warning */
+.log div.anomaly {
+    background-color: #ff5252;
+    /* Bright, alarming red */
+    color: #fff;
+    font-weight: 700;
+    border-left-color: #d50000;
+    /* Deep red status bar */
+    box-shadow: 0 2px 8px rgba(255, 82, 82, 0.4);
+    /* Red glow for urgency */
+    animation: pulse 1.5s infinite alternate;
+    /* Subtle breathing effect */
+}
+
+.anomaly {
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.normal {
+    color: black;
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.log-entry {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 2px 8px rgba(255, 82, 82, 0.4);
+    }
+
+    to {
+        box-shadow: 0 4px 12px rgba(255, 82, 82, 0.7);
+    }
+}
+
+
+/* Hover effect for logs - Interactive feedback */
+.log div:hover {
+    background-color: #bbdefb;
+    /* Slightly darker on hover */
+    transform: translateX(3px);
+    /* Slide effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.log div.anomaly:hover {
+    background-color: #ff1744;
+    /* Brighter red on hover */
+}
+
+
+/* Responsive - Better scaling */
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%;
+        /* Full width buttons on small screens */
+        margin-bottom: 10px;
+    }
+
+    .log {
+        padding: 15px;
+    }
+}
